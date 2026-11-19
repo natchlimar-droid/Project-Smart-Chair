@@ -1,0 +1,163 @@
+import { DailyAnalytics, HourlyFatigue, LeaderboardMember, TeamBoss } from '../types';
+
+export const INITIAL_7_DAY_TREND: DailyAnalytics[] = [
+  {
+    date: '2026-11-12',
+    dayName: 'Thu',
+    sittingHours: 7.2,
+    goodPosturePct: 68,
+    slouchCount: 22,
+    breaksTaken: 4,
+    expEarned: 2450,
+  },
+  {
+    date: '2026-11-13',
+    dayName: 'Fri',
+    sittingHours: 6.8,
+    goodPosturePct: 72,
+    slouchCount: 18,
+    breaksTaken: 5,
+    expEarned: 2800,
+  },
+  {
+    date: '2026-11-14',
+    dayName: 'Sat',
+    sittingHours: 3.5,
+    goodPosturePct: 84,
+    slouchCount: 6,
+    breaksTaken: 4,
+    expEarned: 1600,
+  },
+  {
+    date: '2026-11-15',
+    dayName: 'Sun',
+    sittingHours: 2.1,
+    goodPosturePct: 88,
+    slouchCount: 4,
+    breaksTaken: 3,
+    expEarned: 1100,
+  },
+  {
+    date: '2026-11-16',
+    dayName: 'Mon',
+    sittingHours: 7.5,
+    goodPosturePct: 64,
+    slouchCount: 26,
+    breaksTaken: 3,
+    expEarned: 2300,
+  },
+  {
+    date: '2026-11-17',
+    dayName: 'Tue',
+    sittingHours: 6.4,
+    goodPosturePct: 76,
+    slouchCount: 14,
+    breaksTaken: 6,
+    expEarned: 3100,
+  },
+  {
+    date: '2026-11-18',
+    dayName: 'Today',
+    sittingHours: 5.6,
+    goodPosturePct: 81,
+    slouchCount: 9,
+    breaksTaken: 5,
+    expEarned: 2950,
+  },
+];
+
+export const INITIAL_HOURLY_FATIGUE: HourlyFatigue[] = [
+  { hour: '08:00', sittingMins: 20, slouchMins: 2, goodPostureMins: 18, slouchRatio: 10 },
+  { hour: '09:00', sittingMins: 48, slouchMins: 5, goodPostureMins: 43, slouchRatio: 10.4 },
+  { hour: '10:00', sittingMins: 52, slouchMins: 7, goodPostureMins: 45, slouchRatio: 13.5 },
+  { hour: '11:00', sittingMins: 50, slouchMins: 9, goodPostureMins: 41, slouchRatio: 18 },
+  { hour: '12:00', sittingMins: 25, slouchMins: 4, goodPostureMins: 21, slouchRatio: 16 }, // Lunch time
+  { hour: '13:00', sittingMins: 54, slouchMins: 22, goodPostureMins: 32, slouchRatio: 40.7, isPeakFatigue: true }, // Post-lunch slump
+  { hour: '14:00', sittingMins: 56, slouchMins: 28, goodPostureMins: 28, slouchRatio: 50.0, isPeakFatigue: true }, // High fatigue
+  { hour: '15:00', sittingMins: 53, slouchMins: 24, goodPostureMins: 29, slouchRatio: 45.3, isPeakFatigue: true }, // Afternoon fatigue
+  { hour: '16:00', sittingMins: 49, slouchMins: 16, goodPostureMins: 33, slouchRatio: 32.6 },
+  { hour: '17:00', sittingMins: 45, slouchMins: 12, goodPostureMins: 33, slouchRatio: 26.6 },
+  { hour: '18:00', sittingMins: 30, slouchMins: 8, goodPostureMins: 22, slouchRatio: 26.6 },
+  { hour: '19:00', sittingMins: 15, slouchMins: 3, goodPostureMins: 12, slouchRatio: 20.0 },
+];
+
+export const INITIAL_LEADERBOARD: LeaderboardMember[] = [
+  {
+    id: 'user-1',
+    name: 'Alex Rivera (You)',
+    role: 'Senior Full-Stack Engineer',
+    avatar: '🛡️',
+    goodPosturePct: 81,
+    breakConsistencyPct: 92,
+    level: 7,
+    title: 'Posture Paladin',
+    coopDamageContribution: 2450,
+    isCurrentUser: true,
+  },
+  {
+    id: 'user-2',
+    name: 'Elena Rostova',
+    role: 'Data Scientist',
+    avatar: '🧙‍♀️',
+    goodPosturePct: 86,
+    breakConsistencyPct: 94,
+    level: 9,
+    title: 'Spine Sorceress',
+    coopDamageContribution: 3100,
+  },
+  {
+    id: 'user-3',
+    name: 'Marcus Chen',
+    role: 'Product Designer',
+    avatar: '🏹',
+    goodPosturePct: 78,
+    breakConsistencyPct: 88,
+    level: 6,
+    title: 'Ergo Ranger',
+    coopDamageContribution: 2150,
+  },
+  {
+    id: 'user-4',
+    name: 'Sarah Connor',
+    role: 'DevOps Lead',
+    avatar: '🦾',
+    goodPosturePct: 74,
+    breakConsistencyPct: 82,
+    level: 5,
+    title: 'Cyber Spine Guardian',
+    coopDamageContribution: 1820,
+  },
+  {
+    id: 'user-5',
+    name: 'Kenji Sato',
+    role: 'Frontend Architect',
+    avatar: '⚔️',
+    goodPosturePct: 69,
+    breakConsistencyPct: 75,
+    level: 4,
+    title: 'Ergonomic Squire',
+    coopDamageContribution: 1400,
+  },
+  {
+    id: 'user-6',
+    name: 'Chloe Dubois',
+    role: 'QA Engineer',
+    avatar: '🧚',
+    goodPosturePct: 65,
+    breakConsistencyPct: 70,
+    level: 3,
+    title: 'Novice Sitter',
+    coopDamageContribution: 1100,
+  },
+];
+
+export const INITIAL_TEAM_BOSS: TeamBoss = {
+  name: 'Lord Kyphosis',
+  title: 'The Great Spine Crump',
+  currentHp: 4680,
+  maxHp: 10000,
+  description: 'A malevolent beast formed from 1,000 bad chair slumps and ignored break alarms. Vanquish him by keeping posture high and taking 3m active breaks!',
+  rewardExp: 500,
+  daysRemaining: 3,
+};
+
